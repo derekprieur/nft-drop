@@ -1,9 +1,11 @@
+import { useAddress } from '@thirdweb-dev/react'
 import React from 'react'
 import Content from '../../components/Content'
 import Header from '../../components/Header'
 import MintButton from '../../components/MintButton'
 
 function NFTDropPage() {
+    const address = useAddress()
     return (
         <div className='flex h-screen flex-col lg:grid lg:grid-cols-10'>
             {/* left */}
@@ -23,6 +25,9 @@ function NFTDropPage() {
                 {/* Header */}
                 <Header />
                 <hr className='my-2 border' />
+                {address && (
+                    <p className='text-center text-sm lg:text-base text-rose-400'>You're logged in with wallet {address.slice(0, 5)}...{address.slice(address.length - 5)}</p>
+                )}
                 {/* Content */}
                 <Content />
                 {/* Mint Button */}
