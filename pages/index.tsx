@@ -11,7 +11,7 @@ type Props = {
   collections: Collection[]
 }
 
-const Home: NextPage = ({ collections }: Props) => {
+const HomePage = ({ collections }: Props) => {
   return (
     <div className="max-w-7xl mx-auto flex flex-col h-screen py-20 px-10 xl:px-0">
       <Head>
@@ -38,7 +38,7 @@ const Home: NextPage = ({ collections }: Props) => {
   )
 }
 
-export default Home
+export default HomePage
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const query = `
